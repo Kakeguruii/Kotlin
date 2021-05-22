@@ -64,3 +64,58 @@ fun main() {
     println("Метод times: ${sum.plus(10)}")
     println("Метод times: ${sum.times(6)}")
 }
+
+//7 задание
+fun sum(chis : Int) {
+    var chislo: Int = chis
+    var sum = 0
+    while (chislo != 0) {
+        sum += chislo % 10
+        chislo /= 10
+    }
+    println("Сумма цифр : $sum")
+}
+fun prod(chis : Int){
+    var chislo: Int = chis
+    var prod = 1
+    while (chislo != 0) {
+        prod *= chislo % 10
+        chislo /= 10
+    }
+
+    println("Произведение цифр : $prod")
+}
+
+fun max(chis : Int){
+    var chislo: Int = chis
+    var max = chislo % 10
+    while (chislo != 0) {
+        if (chislo % 10 > max)
+            max = chislo % 10
+        chislo /= 10
+    }
+    println("Максимальная цифра : $max")
+
+}
+
+fun min(chis : Int){
+    var chislo: Int = chis
+    var min = chislo % 10
+    while (chislo != 0) {
+        if (chislo % 10 < min)
+            min = chislo % 10
+        chislo /= 10
+    }
+    println("Минимальная цифра : $min")
+}
+
+fun main() {
+    print("Введите число: ")
+    val input = Scanner(System.`in`)
+    var c = input.nextInt()
+    var chis: Int = c.toInt()
+    sum(chis)
+    prod(chis)
+    max(chis)
+    min(chis)
+}
