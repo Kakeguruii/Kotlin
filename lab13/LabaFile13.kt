@@ -27,3 +27,21 @@ fun main() { //var stroka = readLine()
     }
 }
 
+//5 задание
+fun main(args: Array<String>) {
+    if (args.size == 0) {
+        print("Введите ваше имя:")
+        return
+    }
+    println("Привет, ${args[0]}!")
+    println("Какой у тебя любимый язык(на английском)?")
+    var language = readLine()
+    when (language) {
+        "Prolog", "Kotlin" -> println("Любимчик Жука")
+        "C#" -> println("Страшный вы человек...")
+        "Python" -> println("Красавчик!")
+        "C++" -> println("Классика...")
+        "Pascal" -> println("Все хорошо?")
+        else -> println("Таких языков на ФКТиПМ не знают.")
+    }
+}
