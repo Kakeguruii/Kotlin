@@ -45,3 +45,22 @@ fun main(args: Array<String>) {
         else -> println("Таких языков на ФКТиПМ не знают.")
     }
 }
+
+//6 задание
+fun main() {
+    print("Введите число: ")
+    val input = Scanner(System.`in`)
+    var c = input.nextInt()
+    var chis: Int = c.toInt()
+    var sum = 0
+    while (chis != 0){
+        sum+=chis%10
+        chis/=10
+    }
+    println("Сумма цифр : $sum")
+    println("Метод inc: ${sum.inc()}")
+    println("Метод dec: ${sum.dec()}")
+    println("Метод div: ${sum.div(3)}")
+    println("Метод times: ${sum.plus(10)}")
+    println("Метод times: ${sum.times(6)}")
+}
