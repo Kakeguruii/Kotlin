@@ -197,4 +197,76 @@ fun main(args: Array<String>)
         println("Результат задания 2: ${countDigitsLess3(number)}")
         println("Результат задания 3: ${task8method3(number)}")
     }
+
+    ////9 задание
+    fun main(){
+        var n = 0
+        while(n != 8){
+            println("Список команд: \n" +
+                    "1. Найти сумму цифр числа \n" +
+                    "2. Найти произведение цифр числа \n" +
+                    "3. Найти максимальную цифру числа \n" +
+                    "4. Найти минимальную цифр числа \n" +
+                    "5. Найти кол-во делителей, числа, не кратных 3\n" +
+                    "6. Найти минимальную нечётную цифру числа \n" +
+                    "7. Найти сумму цифр числа \n" +
+                    "8. Закончить работу \n"
+            )
+            println("Введите команду: ")
+            val input = Scanner(System.`in`)
+            var command = input.nextInt()
+            if(1 <= command && command <= 7) {
+                print("Введите число: ")
+                val inputChislo = Scanner(System.`in`)
+                var chislo = inputChislo.nextInt()
+                when (command) {
+                    1 -> {
+                        sum(chislo)
+                        println("Нажмите, чтобы продолжить")
+                        var go = readLine()
+                    }
+
+                    2 -> {
+                        prod(chislo)
+                        println("Нажмите, чтобы продолжить")
+                        var go = readLine()
+                    }
+
+                    3 -> {
+                        max(chislo)
+                        println("Нажмите, чтобы продолжить")
+                        var go = readLine()
+                    }
+
+                    4 -> {
+                        min(chislo)
+                        println("Нажмите, чтобы продолжить")
+                        var go = readLine()
+                    }
+
+                    5 -> {
+                        delThree(chislo)
+                        println("Нажмите, чтобы продолжить")
+                        var go = readLine()
+                    }
+
+                    6 -> {
+                        minNechet(chislo)
+                        println("Нажмите, чтобы продолжить")
+                        var go = readLine()
+                    }
+
+                    7 -> {
+                        sumDel(chislo)
+                        println("Нажмите, чтобы продолжить")
+                        var go = readLine()
+                    }
+                }
+            }
+            else{
+                return
+            }
+        }
+    }
+
     
