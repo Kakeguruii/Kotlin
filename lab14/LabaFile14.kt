@@ -98,3 +98,23 @@ fun tremDigit(num:Int) : Boolean =  if(num != 0) {
 // 221 3 2 - проверка на чётность цифр, не выводит минимальное число, т.к. проверка не пройдена
 // 9339 4 1 - проверка цифр на кратность 3, выводит макс цифру = 9
 
+//7.1 задание
+fun simpleNumber(number: Int, del: Int = number - 1) : Boolean =
+    when
+    {
+        number == 1 -> true
+        del == 1 -> true
+        number % del == 0 -> false
+        else -> simpleNumber(number, del - 1)
+    }
+
+// Сумма непростых делителей числа.
+fun sumOfNoSimpleDelOfNumber(number: Int, del: Int = number, sum: Int = 0) : Int =
+    when
+    {
+        (number == 0) -> 0
+        (del == 0) -> sum
+        (number % del == 0 && !simpleNumber(del)) -> sumOfNoSimpleDelOfNumber(number, del - 1, sum + del)
+        else -> sumOfNoSimpleDelOfNumber(number, del - 1, sum)
+    }
+
