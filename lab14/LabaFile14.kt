@@ -64,3 +64,7 @@ tailrec fun maxDigitTail(num: Int, max: Int = num%10): Int = if (num != 0) {
     maxDigitTail(num / 10, if (num%10>max) num%10 else max)
 } else max
 
+// 4 задание
+fun obhodDigit(num: Int, func: (num: Int) -> Int, initValue: Int = 0): Int =
+    func(num)
+
