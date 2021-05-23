@@ -158,3 +158,13 @@ fun task7method3(number: Int, del: Int = number - 1, count: Int = 0) : Int =
                 ) -> task7method3(number, del - 1, count + 1)
         else -> task7method3(number, del - 1, count)
     }
+
+//8 задание
+fun op(num: Int, choice: Int): Int =
+    when (choice) {
+        1 -> delWithoutThree(num)
+        2 -> minNechetDigitTail(num)
+        3 -> delDigit(num)
+        else -> throw Exception()
+    }
+
