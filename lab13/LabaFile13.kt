@@ -278,4 +278,22 @@ fun main(args: Array<String>)
     fun main() {
         println(digits2in1000())
     }
+
+    //36 задание
+    fun palindromeSum() = palindromeSum(1, 1000000, 0)
+    tailrec  fun palindromeSum(current : Int, border : Int, sum: Long) : Long = when {
+        current == border -> sum
+        isPalindrome(current.toString()) && isPalindrome(current.toString(2)) -> palindromeSum(current + 1, border, sum + current)
+        else -> palindromeSum(current + 1, border, sum)
+    }
+    fun isPalindrome(number : String) : Boolean = isPalindrome(number, 0, number.length / 2)
+    tailrec fun isPalindrome(number : String, current : Int, border : Int) : Boolean = when {
+        current == border -> true
+        number[current] != number[number.length - current - 1] -> false
+        else -> isPalindrome(number, current + 1, border)
+    }
+    fun main() {
+        println(digits2in1000())
+        println(palindromeSum())
+    }
     
