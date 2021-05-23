@@ -168,3 +168,12 @@ fun op(num: Int, choice: Int): Int =
         else -> throw Exception()
     }
 
+//16 задание
+fun digits2in1000() : Int {
+    val number = BigInteger.ONE.shiftLeft(1000).toString()
+    return charsProcedding(number, 0, 0, {a, b -> a+b}, {_ -> true})
+}
+fun main() {
+    println(digits2in1000())
+}
+
