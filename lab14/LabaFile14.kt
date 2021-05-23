@@ -118,3 +118,12 @@ fun sumOfNoSimpleDelOfNumber(number: Int, del: Int = number, sum: Int = 0) : Int
         else -> sumOfNoSimpleDelOfNumber(number, del - 1, sum)
     }
 
+//7.2 задание
+fun countDigitsLess3(number: Int, count: Int = 0) : Int =
+    when
+    {
+        (number == 0) -> count
+        (number % 10 < 3) -> countDigitsLess3(number / 10, count + 1)
+        else -> countDigitsLess3(number / 10, count)
+    }
+
