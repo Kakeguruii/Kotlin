@@ -1,4 +1,5 @@
 import java.util.*
+import java.math.BigInteger;
 
 ////1 задание
 //fun main()=println("Hello World!")
@@ -269,4 +270,12 @@ fun main(args: Array<String>)
         }
     }
 
+    //16 задание
+    fun digits2in1000() : Int {
+        val number = BigInteger.ONE.shiftLeft(1000).toString()
+        return charsProcedding(number, 0, 0, {a, b -> a+b}, {_ -> true})
+    }
+    fun main() {
+        println(digits2in1000())
+    }
     
