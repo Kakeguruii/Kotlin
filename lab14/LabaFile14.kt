@@ -126,4 +126,35 @@ fun countDigitsLess3(number: Int, count: Int = 0) : Int =
         (number % 10 < 3) -> countDigitsLess3(number / 10, count + 1)
         else -> countDigitsLess3(number / 10, count)
     }
+//7.3 задание
+// НОД двух чисел
+fun nodTwoNumbers(number1: Int, number2: Int, nod: Int = (if (number1 > number2) number2 else number1)) : Int =
+    when
+    {
+        (number1 == 0 || number2 == 0) -> -1
+        (number1 % nod == 0 && number2 % nod == 0) -> nod
+        else -> nodTwoNumbers(number1, number2, nod - 1)
+    }
 
+// Сумма простых цифр числа
+fun sumOfSimpleDigitsOfNumber(number: Int, sum: Int = 0) : Int =
+    when
+    {
+        (number == 0) -> sum
+        simpleNumber(number % 10) -> sumOfSimpleDigitsOfNumber(number / 10, sum + (number % 10))
+        else -> sumOfSimpleDigitsOfNumber(number / 10, sum)
+    }
+
+// main
+fun task7method3(number: Int, del: Int = number - 1, count: Int = 0) : Int =
+    when
+    {
+        (del == -1 || del == 0) -> 0
+        (del == 1) -> count
+        (
+                number % del != 0 &&
+                        nodTwoNumbers(number, del) != 1 &&
+                        nodTwoNumbers(sumOfSimpleDigitsOfNumber(number), del) == 1
+                ) -> task7method3(number, del - 1, count + 1)
+        else -> task7method3(number, del - 1, count)
+    }
