@@ -68,3 +68,27 @@ tailrec fun maxDigitTail(num: Int, max: Int = num%10): Int = if (num != 0) {
 fun obhodDigit(num: Int, func: (num: Int) -> Int, initValue: Int = 0): Int =
     func(num)
 
+//5 задание
+fun obhodUsloviyeDigit(num: Int, func1:(num: Int) -> Boolean, func2: (num: Int) -> Int, initValue: Int = 0): Int =
+    if(func1(num)) {
+        func2(num)
+    }else throw Exception()
+
+fun nechetDigit(num:Int) : Boolean =  if(num != 0) {
+    if((num % 10) % 2 == 1) {
+        nechetDigit(num/10)
+    }else false
+}else true
+
+fun chetDigit(num:Int) : Boolean =  if(num != 0) {
+    if((num % 10) % 2 == 0) {
+        nechetDigit(num/10)
+    }else false
+}else true
+
+fun tremDigit(num:Int) : Boolean =  if(num != 0) {
+    if((num % 10) % 3 == 0) {
+        tremDigit(num/10)
+    }else false
+}else true
+
