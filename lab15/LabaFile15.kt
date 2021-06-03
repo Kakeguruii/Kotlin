@@ -218,4 +218,205 @@ fun generatorCol(): Coll {
     return Coll(lists, sets)
 }
 
+fun main() {
+    val input = Scanner(System.`in`)
+//val mas = readMass()
 
+// Задание 1.1
+
+//    println(
+//        "Выберите команду: \n" +
+//                "1.Поиск суммы элементов \n" +
+//                "2.Поиск минимального элемента \n" +
+//                "3.Поиск максимального элемента \n" +
+//                "4.Поиск произведения элементов"
+//    )
+//    when (input.nextInt()) {
+//        1 -> println("Сумма элементов: ${arrayOp(mas, ::sumDigit,0)}")
+//        2 -> println("Минимальный элемент: ${arrayOp(mas, ::minDigit,mas[0])}")
+//        3 -> println("Максимальный элемент: ${arrayOp(mas, ::maxDigit,mas[0)}")
+//        4 -> println("Произведение элементов: ${arrayOp(mas, ::proizDigit,1)}")
+//    }
+//}
+
+//Задание 1.2
+
+//    println(
+//        "Выберите команду: \n" +
+//                "1.Поиск суммы элементов \n" +
+//                "2.Поиск минимального элемента \n" +
+//                "3.Поиск максимального элемента \n" +
+//                "4.Поиск произведения элементов"
+//    )
+//    when (input.nextInt()) {
+//        1 -> println("Сумма элементов: ${arrayOp(mas, { sum, x: Int -> sum + x }, 0)}")
+//        2 -> println("Минимальный элемент: ${arrayOp(mas, { min, x: Int -> if (x<min) x else min}, mas[0])} ")
+//        3 -> println("Максимальный элемент: ${arrayOp(mas,  { max, x: Int -> if (x>max) x else max}, mas[0])}")
+//        4 -> println("Произведение элементов: ${arrayOp(mas, { pr, x: Int -> pr * x }, 1)}")
+//    }
+
+// Задание 1.3
+
+// println(
+//    "Выберите команду: \n" +
+//            "1.Поиск суммы элементов \n" +
+//            "2.Поиск минимального элемента \n" +
+//            "3.Поиск максимального элемента \n" +
+//            "4.Поиск произведения элементов"
+//)
+//when (input.nextInt()) {
+//    1 -> println("Сумма элементов: ${sumDigit1(mas)}")
+//    2 -> println("Минимальный элемент: ${minDigit1(mas)} ")
+//    3 -> println("Максимальный элемент: ${maxDigit1(mas)}")
+//    4 -> println("Произведение элементов: ${proizDigit1(mas)}")
+//}
+
+
+// Задание 3
+
+    //println(
+    //    "Выберите команду: \n" +
+    //            "1.Чтение массива с клавиатуры \n" +
+    //            "2.Чтение массива с файла \n"
+    //)
+    //val func = chooseMas(input.nextInt())
+    //val mas = func()
+    //printMass(mas)
+
+
+//// 4.5
+//    println("Введите индекс: ")
+//    val index = input.nextInt()
+//    println("Ваш индекс ${checkElem(mas, index)}")
+
+
+// 4.17
+//
+//    println("Ваш свапнутый массив:")
+//    printMass(swapMinMax(mas))
+
+//// 4.26
+
+//    val min1 = arrayOp(mas, { min, x: Int -> if (x < min) x else min }, 10000)
+//    val min2 = arrayOp(mas, { min, x: Int -> if (x < min && x != min1) x else min }, 10000)
+//    val inMin1 = findNum(mas, min1)
+//    val inMin2 = findNum(mas, min2)
+//    println(min1)
+//    println(min2)
+//    if (inMin1>inMin2) println("Количество элементов между первым и вторыми минимумом:${inMin1-inMin2-1}")
+//    else println("Количество элементов между первым и вторыми минимумом:${inMin2-inMin1-1}")
+
+////4.29
+//      println("Введите а: ")
+//      val a = input.nextInt()
+//      println("Введите b: ")
+//      val b = input.nextInt()
+//      println("Ваш максимум ${checkMax(mas, a,b)}")
+
+////4.41
+
+//    val mas = readMass()
+//    val sum = arrayOp(mas, { sum, x: Int -> abs(sum) + abs(x) }, 0)
+//    val size = mas.size
+//
+//    println("Среднее арифметическое: ${sum.toFloat()/size.toFloat()}")
+
+////4..47
+//    val mas = readMass()
+//    var alldelit=allDel(mas,IntArray(0))
+//    val numbers = alldelit.toSet()
+//    val numbers2 = numbers.toIntArray()
+//
+//    println("Неповторяющиеся делители для вашей последовательности:")
+//    printMass(numbers2.sortedArray())
+
+////4.53
+//    val sum = arrayOp(mas, { sum, x: Int -> sum + x }, 0)
+//    val size = mas.size
+//    val sr = sum.toFloat() / size.toFloat()
+//    val mass=genMas(mas, sr)
+//    printMass(mass)
+
+// задание 5.1
+//
+//    println(
+//        "Выберите команду: \n" +
+//                "1.Поиск суммы элементов \n" +
+//                "2.Поиск минимального элемента \n" +
+//                "3.Поиск максимального элемента \n" +
+//                "4.Поиск произведения элементов"
+//    )
+//    when (input.nextInt()) {
+//        1 -> println("Сумма элементов: ${arrayOp2(mas, ::sumDigit,0)}")
+//        2 -> println("Минимальный элемент: ${arrayOp2(mas, ::minDigit,mas[0])}")
+//        3 -> println("Максимальный элемент: ${arrayOp2(mas, ::maxDigit,mas[0)}")
+//        4 -> println("Произведение элементов: ${arrayOp2(mas, ::proizDigit,1)}")
+//    }
+//}
+//
+// Задание  5.2
+//
+//    println(
+//        "Выберите команду: \n" +
+//                "1.Поиск суммы элементов \n" +
+//                "2.Поиск минимального элемента \n" +
+//                "3.Поиск максимального элемента \n" +
+//                "4.Поиск произведения элементов"
+//    )
+//    when (input.nextInt()) {
+//        1 -> println("Сумма элементов: ${arrayOp2(mas, { sum, x: Int -> sum + x }, 0)}")
+//        2 -> println("Минимальный элемент: ${arrayOp2(mas, { min, x: Int -> if (x<min) x else min}, mas[0])} ")
+//        3 -> println("Максимальный элемент: ${arrayOp2(mas,  { max, x: Int -> if (x>max) x else max}, mas[0])}")
+//        4 -> println("Произведение элементов: ${arrayOp2(mas, { pr, x: Int -> pr * x }, 1)}")
+//    }
+//
+// задание 5.3
+//
+//     println(
+//        "Выберите команду: \n" +
+//                "1.Поиск суммы элементов \n" +
+//                "2.Поиск минимального элемента \n" +
+//                "3.Поиск максимального элемента \n" +
+//                "4.Поиск произведения элементов"
+//    )
+//    when (input.nextInt()) {
+//        1 -> println("Сумма элементов: ${sumDigit2(mas)}")
+//        2 -> println("Минимальный элемент: ${minDigit2(mas)} ")
+//        3 -> println("Максимальный элемент: ${maxDigit2(mas)}")
+//        4 -> println("Произведение элементов: ${proizDigit2(mas)}")
+//    }
+
+    // Задание 6
+//
+//     println(
+//        "Выберите команду: \n" +
+//                "1.Поиск суммы элементов \n" +
+//                "2.Поиск минимального элемента \n" +
+//                "3.Поиск максимального элемента \n" +
+//                "4.Поиск произведения элементов"
+//    )
+//    when (input.nextInt()) {
+//        1 -> println("Сумма элементов: ${list1.sum()}")
+//        2 -> println("Минимальный элемент: ${list1.minOrNull()} ")
+//        3 -> println("Максимальный элемент: ${list1.maxOrNull()}")
+//        4 -> println("Произведение элементов: ${list1.reduce { acc, i -> acc*i }}")
+//    }
+
+// Задание  7
+
+//    println(
+//        "Выберите команду: \n" +
+//                "1.Чтение массива с клавиатуры \n" +
+//                "2.Чтение массива с файла \n"
+//    )
+//    val func = chooseList(input.nextInt())
+//    val list2 = func()
+//    println(list2)
+
+
+    // Задание 9 и 10
+
+    //val coll = generatorCol()
+    //println("список ${coll.lists}, множество ${coll.sets}")
+
+}
