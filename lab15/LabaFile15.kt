@@ -172,4 +172,20 @@ fun minDigit2(mas: MutableList<Int>): Int = arrayOp2(mas, { min, x: Int -> if (x
 fun maxDigit2(mas: MutableList<Int>): Int = arrayOp2(mas, { max, x: Int -> if (x > max) x else max }, mas[0])
 fun proizDigit2(mas: MutableList<Int>): Int = arrayOp2(mas, { pr, x: Int -> pr * x }, 1)
 
+// Задание 6
+
+fun readListFromFile(): MutableList<Int> {
+    val inputStream: InputStream = File("E:/IntelliJ IDEA/All Labs/Laba 15/massiv.txt").inputStream()
+    val reader = inputStream.bufferedReader()
+    var list1 = mutableListOf<Int>()
+    reader.forEachLine { list1.add(it.toInt()) }
+    return list1
+}
+
+fun chooseList(a: Int): () -> MutableList<Int> = {
+    when (a) {
+        1 -> readList()
+        else -> readListFromFile()
+    }
+}
 
