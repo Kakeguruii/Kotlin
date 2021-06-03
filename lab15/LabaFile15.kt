@@ -143,4 +143,33 @@ tailrec fun genMas(mas: IntArray, sr: Float, i: Int = 0, mas2: IntArray = IntArr
         } else genMas(mas, sr, i + 1, mas2)
     } else mas2
 
+// Задание 5
+// чтение листа с клавиатуры
+fun readList(): MutableList<Int> {
+    val input = Scanner(System.`in`)
+    print("Введите кол-во элементов: ")
+    val n = input.nextInt()
+    val mas = mutableListOf<Int>()
+    println("Введите элементы: ")
+    var i = 0
+    while (i < n) {
+        mas.add(input.nextInt())
+        i++
+    }
+    return mas
+}
+
+
+tailrec fun arrayOp2(mas: MutableList<Int>, f: (Int, Int) -> Int, inVal: Int, i: Int = 0): Int =
+    if (i < mas.size) {
+        val a = f(inVal, mas[i])
+        arrayOp2(mas, f, a, i + 1)
+    } else inVal
+
+
+fun sumDigit2(mas: MutableList<Int>): Int = arrayOp2(mas, { sum, x: Int -> sum + x }, 0)
+fun minDigit2(mas: MutableList<Int>): Int = arrayOp2(mas, { min, x: Int -> if (x < min) x else min }, mas[0])
+fun maxDigit2(mas: MutableList<Int>): Int = arrayOp2(mas, { max, x: Int -> if (x > max) x else max }, mas[0])
+fun proizDigit2(mas: MutableList<Int>): Int = arrayOp2(mas, { pr, x: Int -> pr * x }, 1)
+
 
