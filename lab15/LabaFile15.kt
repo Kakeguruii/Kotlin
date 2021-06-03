@@ -64,4 +64,20 @@ fun maxDigit1(mas: IntArray): Int = arrayOp(mas, { max, x: Int -> if (x > max) x
 
 fun proizDigit1(mas: IntArray): Int = arrayOp(mas, { pr, x: Int -> pr * x }, 1)
 
+// Задание 3
+fun readMassFromFile(): IntArray {
+    val inputStream: InputStream = File("C:/IntelliJ IDEA/Labs/Laba15/mass.txt").inputStream()
+    val reader = inputStream.bufferedReader()
+    var mas = IntArray(0)
+    reader.forEachLine { mas += it.toInt() }
+    return mas
+}
+
+fun chooseMas(a: Int): () -> IntArray = {
+    when (a) {
+        1 -> readMass()
+        else -> readMassFromFile()
+    }
+}
+
 
