@@ -189,3 +189,33 @@ fun chooseList(a: Int): () -> MutableList<Int> = {
     }
 }
 
+// Задание 9 и 10
+
+fun random(from: Double, to: Double) = (Math.random() * (to - from) + from).toFloat()
+
+
+data class Coll(val lists: List<Float>, val sets: Set<Float>)
+
+fun generatorCol(): Coll {
+    val timeout = System.currentTimeMillis()
+    var lists = List(10000000) { random(0.1, 0.9) }
+    val sets = lists.toSet()
+    lists = sets.toList()
+    val res = (System.currentTimeMillis() - timeout) / 1000.0
+    println("Время генерации: $res")
+
+    val timeout2 = System.currentTimeMillis()
+    val minelem1 = lists.minOrNull()
+    val res2 = (System.currentTimeMillis() - timeout) / 1000.0
+    println("Время поиска элемента для списка: $res2")
+
+
+    val timeout3 = System.currentTimeMillis()
+    val minelem2 = sets.minOrNull()
+    val res3 = (System.currentTimeMillis() - timeout) / 1000.0
+    println("Время поиска элемента для множества: $res3")
+
+    return Coll(lists, sets)
+}
+
+
