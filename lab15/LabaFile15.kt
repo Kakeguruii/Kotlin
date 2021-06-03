@@ -80,4 +80,67 @@ fun chooseMas(a: Int): () -> IntArray = {
     }
 }
 
+// Задание 4.5
+fun checkElem(mas: IntArray, inVal: Int): String {
+    if (minDigit1(mas) == mas[inVal])
+        return "равен глобальному минимуму"
+    return "не равен глобальному минимуму"
+}
+
+
+// Задание 4.17
+tailrec fun findNum(mas: IntArray, inVal: Int, j: Int = 0): Int =
+    if (j < mas.size) {
+        if (mas[j] == inVal)
+            j
+        else findNum(mas, inVal, j + 1)
+    } else inVal
+
+fun swapMinMax(mas: IntArray): IntArray {
+    val inMin = findNum(mas, minDigit1(mas))
+    val inMax = findNum(mas, maxDigit1(mas))
+    var a = 0
+    a = mas[inMax]
+    mas[inMax] = mas[inMin]
+    mas[inMin] = a
+    return mas
+}
+
+// Задание 4.29
+
+fun checkMax(mas: IntArray, a: Int, b: Int): String {
+    val inMax = findNum(mas, maxDigit1(mas))
+    if (inMax in a..b)
+        return "входит в промежуток"
+    return "не входит в промежуток"
+}
+
+// Задание 4.41, 4.47
+
+tailrec fun delDigit(num: Int, inVal: IntArray = IntArray(0), i: Int = 1): IntArray =
+    if (i <= num) {
+        if (num % i == 0) {
+            delDigit(num, inVal + i, i + 1)
+        } else delDigit(num, inVal, i + 1)
+    } else inVal
+
+tailrec fun allDel(mas: IntArray, inVal: IntArray, j: Int = 0): IntArray = if (j < mas.size) {
+    val ex = delDigit(mas[j])
+    var ins = inVal
+    ex.forEach { ins += it.toInt() }
+    allDel(mas, ins, j + 1)
+} else inVal
+
+// Задание 4.53
+
+tailrec fun genMas(mas: IntArray, sr: Float, i: Int = 0, mas2: IntArray = IntArray(0)):IntArray=
+
+    if (i < mas.size) {
+        val maxim = maxDigit1(mas)
+        if (mas[i] > sr && mas[i] < maxim) {
+            val temp = mas2 + mas[i]
+            genMas(mas, sr, i + 1, temp)
+        } else genMas(mas, sr, i + 1, mas2)
+    } else mas2
+
 
