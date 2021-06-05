@@ -88,3 +88,15 @@ fun searchDates(str: String): String {
     return a
 }
 
+//task4
+tailrec fun searchKirletters(s: String, inVal: IntArray = IntArray(0), i: Int = 0, j: Int = 0): IntArray =
+    if (i < s.length) {
+        val c = s[i].toChar()
+        if ((c in 'а'..'я') || (c in 'А'..'Я')) {
+            searchKirletters(s, inVal, i + 1, j + 1)
+        } else {
+            val temp = inVal + j
+            searchKirletters(s, temp, i + 1, 0)
+        }
+    } else inVal
+
