@@ -33,7 +33,7 @@ fun printMass2(mas: IntArray, i: Int = 0): String =
         printMass2(mas, i + 1)
     } else "\n"
 
-//5
+
 fun randomCharInString(s: String): String {
     val listS = s.toList()
     val newS = listS.shuffled()
@@ -42,3 +42,21 @@ fun randomCharInString(s: String): String {
     res = res.replace(",", "")
     return res
 }
+
+tailrec fun createArrayFromString(s: String, inVal: CharArray = CharArray(0), i: Int = 0): CharArray =
+    if (i < s.length) {
+        if (s[i] in 'a'..'z') {
+            val temp = inVal + s[i]
+            createArrayFromString(s, temp, i + 1)
+        } else createArrayFromString(s, inVal, i + 1)
+
+    } else inVal
+
+fun Palindrom(s: CharArray, i: Int = 0): String =
+    if (i < (s.size) / 2) {
+        if (s[i] != s[s.size - i - 1]) {
+            "не палиндром"
+        } else Palindrom(s, i + 1)
+
+    } else "палиндром"
+
