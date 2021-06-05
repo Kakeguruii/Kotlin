@@ -77,3 +77,14 @@ tailrec fun obxodWords(
         list2
     }
 
+//task3
+fun searchDates(str: String): String {
+    val setOfDates =
+        Regex("""(0[1-9]|[12][0-9]|3[01])[\s](января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря)[\s](20\d\d)""").findAll(
+            str,
+            0
+        )
+    val a = setOfDates.map { it.groupValues[0] }.joinToString()
+    return a
+}
+
