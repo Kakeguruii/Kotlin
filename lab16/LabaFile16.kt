@@ -60,3 +60,20 @@ fun Palindrom(s: CharArray, i: Int = 0): String =
 
     } else "палиндром"
 
+tailrec fun obxodWords(
+    s: String,
+    list1: MutableList<String> = mutableListOf<String>("", "", "", "", "", "", "", "", "", "")
+): String =
+    if (s.isNotEmpty()) {
+        val a = s.substringBefore(' ')
+        val b = a.length
+        list1[b] = list1[b] + a + " "
+        obxodWords(s.drop(b + 1), list1)
+    } else {
+        var list2 = list1.toString()
+        list2 = list2.replace(",", "")
+        list2 = list2.removeSurrounding("[", "]")
+        list2 = list2.removeSurrounding(" ", "")
+        list2
+    }
+
