@@ -100,3 +100,27 @@ tailrec fun searchKirletters(s: String, inVal: IntArray = IntArray(0), i: Int = 
         }
     } else inVal
 
+tailrec fun searchNatDigit(
+    s: String,
+    inVal: MutableList<String> = mutableListOf<String>(),
+    i: Int = 0,
+    j: String = ""
+): MutableList<String> =
+    if (i < s.length) {
+        val c = s[i]
+
+        if (c in '0'..'9') {
+            searchNatDigit(s, inVal, i + 1, j + s[i])
+        } else {
+            if (j != "") {
+                inVal.add(j)
+                searchNatDigit(s, inVal, i + 1, "")
+            } else searchNatDigit(s, inVal, i + 1, "")
+        }
+    } else {
+        if (j != "") {
+            inVal.add(j)
+            inVal
+        } else inVal
+    }
+
