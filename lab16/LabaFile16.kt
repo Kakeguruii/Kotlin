@@ -140,4 +140,12 @@ tailrec fun obxodWords(
         list2 = list2.removeSurrounding(" ", "")
         list2
     }
+//task5
+fun readListFromFile(): MutableList<String> {
+    val inputStream: InputStream = File("C:/Users/Лиза/Desktop/f.txt").inputStream()
+    val reader = inputStream.bufferedReader()
+    var list1 = mutableListOf<String>()
+    reader.forEachLine { list1.add(it.toString()) }
+    return list1
+}
 
