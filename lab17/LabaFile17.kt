@@ -56,6 +56,11 @@ tailrec  fun createPrava(inVal: MutableList<Prava> = mutableListOf<Prava>(), i:I
         createPrava(inVal,i+1)
     } else inVal
 
+//task6
+abstract class Docs {
+    abstract fun searchDoc()
+}
+
 
 fun main() {
 //// 1
