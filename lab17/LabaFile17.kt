@@ -56,4 +56,7 @@ fun main() {
 //
 //    docs.sortBy{it.id}
 //    docs.forEach { it.show() }
+//// 4
+//    doc2.savePrava()
+
 }
