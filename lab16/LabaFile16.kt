@@ -165,5 +165,14 @@ fun searchCountWords(s: String, inVal: Int = 0): Int =
         searchCountWords(s.drop(b + 1), temp)
     } else inVal
 
+//task7
+fun readListFromFile3(): MutableList<String> {
+    val inputStream: InputStream = File("C:/Users/Лиза/Desktop/f.txt").inputStream()
+    val reader = inputStream.bufferedReader()
+    var list1 = mutableListOf<String>()
+    reader.forEachLine { list1.add(it.toString()) }
+    return list1
+}
+
 
 
