@@ -149,3 +149,21 @@ fun readListFromFile(): MutableList<String> {
     return list1
 }
 
+//task6
+fun readListFromFile2(): MutableList<String> {
+    val inputStream: InputStream = File("C:/Users/Лиза/Desktop/f.txt").inputStream()
+    val reader = inputStream.bufferedReader()
+    var list1 = mutableListOf<String>()
+    reader.forEachLine { list1.add(it.toString()) }
+    return list1
+}
+fun searchCountWords(s: String, inVal: Int = 0): Int =
+    if (s.isNotEmpty()) {
+        val a = s.substringBefore(' ')
+        val b = a.length
+        val temp = inVal + 1
+        searchCountWords(s.drop(b + 1), temp)
+    } else inVal
+
+
+
