@@ -104,5 +104,9 @@ fun main() {
 //    docs.forEach { it.show() }
 //// 4
 //    doc2.savePrava()
+//// 6,7,8
+//    println("Введите номер: ")
+//    val d=DocsArray()
+//    val res= d.searchDoc()
 
 }
