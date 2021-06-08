@@ -61,6 +61,28 @@ abstract class Docs {
     abstract fun searchDoc()
 }
 
+//task7
+class DocsArray() : Docs() {
+    val input = Scanner(System.`in`)
+    val id1=input.nextInt()
+
+    val docss=createPrava()
+    val arraydocs = Array<Prava>(10000000) { i -> docss[i] } //List, BinaryList, HashSet...
+    val timeout = System.currentTimeMillis()
+    override fun searchDoc() {
+        arraydocs.forEach {
+            if (it.id == id1) {
+                val res = (System.currentTimeMillis() - timeout) / 1000.0
+                println("Время поиска: $res")
+                println(it.show())
+            }
+        }
+
+    }
+
+}
+
+
 
 fun main() {
 //// 1
