@@ -37,6 +37,25 @@ class Prava (var name: String, val surname: String, val year: Int, val city: Str
     }
 
 }
+// task5
+tailrec  fun createPrava(inVal: MutableList<Prava> = mutableListOf<Prava>(), i:Int=0 ):MutableList<Prava> =
+    if (i < 10000000) {
+        val names = listOf<String>("Dani", "Kate", "Lisa","Lol","Kek","Chebureck","Dio","Giorno","Josuke")
+        val name = names.random()
+
+        val surnames = listOf<String>("Sokol", "Grechka", "Malesh","Help","Me","Please","Brando","Giovanna","Higashikata")
+        val surname = surnames.random()
+
+        val year=Random.nextInt(1920, 2021)
+
+        val cities = listOf<String>("Kras", "Piter", "Moscow","London","Paris","Rome","Ohae","Maikop","Laplandia")
+        val city= cities.random()
+
+        val id = 10000000+i
+        inVal+=Prava(name,surname,year,city,id)
+        createPrava(inVal,i+1)
+    } else inVal
+
 
 fun main() {
 //// 1
