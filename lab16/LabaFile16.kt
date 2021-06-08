@@ -184,5 +184,84 @@ tailrec fun searchCountWordsAfterDigit(s: String, inVal: Int = 0, i: Int = 1): I
 
     } else inVal
 
+fun main() {
+
+    val input = Scanner(System.`in`)
+    println("Введите строку: ")
+////////////////////1
+//    val stroka = "6 3573 23 6597 321 59 7 1"
+//    println(stroka)
+//    println(obxodString(stroka))
+
+////////////////////2
+//5
+//    val stroka = "a 7 b 8 155 3 5 130"
+//    println(stroka)
+//    println(randomCharInString(stroka))
+
+//7
+//    val stroka1 = "a v h h j t e d f"
+//    println(stroka1)
+//    val stroka2 = "b B y m e m y Z b"
+//    println(stroka2)
+//    val stroka3 = "o h O f g g f E h o"
+//    println(stroka3)
+
+//    val mas = createArrayFromString(stroka1)
+//    println("Ваша строка ${Palindrom(mas)}")
+
+//14
+//    val stroka = "kajdii ohotnik jelaet znat gde sidid fazan"
+//    println(stroka)
+//    val a=obxodWords(stroka)
+//    println(a)
+
+////////////////////3
+//    println("Введите день:")
+//    val date = input.next()
+//    println("Введите месяц:")
+//    val month = input.next()
+//    println("Введите год:")
+//    val year = input.next()
+//    val res = date + " " + month + " " + year
+//    println(searchDates(res))
+
+//////////////////////4
+// 5
+//    val stroka=input.next()
+//    val countWord=searchKirletters(stroka)
+//    println(countWord)
+//    val res=countWord.maxOrNull()
+//    println(res)
+//7
+//    val stroka = input.next()
+//    val countWord = searchNatDigit(stroka)
+//    val res = countWord.map { it.toInt() }
+//    println(res.minOrNull())
+
+//14
+//    val stroka = input.next()
+//    val countWord = searchNatDigit(stroka)
+//    val res = countWord.map { it.toInt() }
+//    println(res.maxOrNull())
+
+///////////////////////5
+//    val list =readListFromFile()
+//    list.sortBy { it.length }
+//    println(list)
+
+//////////////////////6
+//    val list = readListFromFile2()
+//    println(list)
+//    list.sortBy { searchCountWords(it) }
+//    println(list)
+
+//////////////////////7
+
+//    val list = readListFromFile3()
+//    println(list)
+//    list.sortBy { searchCountWordsAfterDigit(it) }
+//    println(list)
+}
 
 
