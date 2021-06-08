@@ -38,3 +38,22 @@ class Prava (var name: String, val surname: String, val year: Int, val city: Str
 
 }
 
+fun main() {
+//// 1
+//
+//    val doc1 = Prava("Daniel", "Sokolov", 2021, "Krasnodar", 944759375)
+//
+//// 2
+//    doc1.show()
+//// 3
+
+//    val doc2 = Prava("Daniel", "Sokolov", 2021, "Krasnodar", 944759375)
+//    val doc3 = Prava("Katerina", "Grechka", 2023, "Krasnodar", 855734976)
+//    val doc4 = Prava("Lisa", "Malezh", 2070, "Krasnodar", 367254685)
+//    val doc5 = Prava("Dio", "Brando", 1920, "London", 138585629)
+////
+//    val docs=arrayOf(doc2,doc3,doc4,doc5)
+//
+//    docs.sortBy{it.id}
+//    docs.forEach { it.show() }
+}
