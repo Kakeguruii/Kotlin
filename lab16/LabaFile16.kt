@@ -174,5 +174,15 @@ fun readListFromFile3(): MutableList<String> {
     return list1
 }
 
+tailrec fun searchCountWordsAfterDigit(s: String, inVal: Int = 0, i: Int = 1): Int =
+    if (i < s.length) {
+        val c = s[i]
+        val d = s[i - 1]
+        if ((c !in '0'..'9') && (d in '0'..'9')) {
+            searchCountWordsAfterDigit(s, inVal + 1, i + 1)
+        } else searchCountWordsAfterDigit(s, inVal, i + 1)
+
+    } else inVal
+
 
 
